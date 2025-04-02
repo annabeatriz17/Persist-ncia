@@ -69,7 +69,7 @@ export default function HomeScreen({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.botao}
-                onPress={() => navigation.navigate("Perfil")}
+                onPress={() => navigation.navigate("Perfil", { textoPersistido })}
             >
                 <Text style={styles.textoBotao}>Perfil</Text>
             </TouchableOpacity>

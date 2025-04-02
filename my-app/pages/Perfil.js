@@ -1,29 +1,31 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Card } from "react-native-elements";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { ScrollView } from "react-native-web";
 
-export default function PerfilScreen({ navigation }) {
+export default function PerfilScreen({ }) {
     return (
+        <ScrollView>
         <View style={styles.container}>
             <Text style={styles.titulo}>Welcome to My Profile!</Text>
             <Text style={styles.texto}>I am Anna Beatriz.</Text>
-            <Text style={styles.texto0}>Me chamo Anna Beatriz, tenho 17 anos e hoje estou estudando na Rede Sesi e Senai em Valinhos - SP. NA rede Sesi estou no 3° ano do Ensino Médio, no meu último ano. Na Rede Senai estou no técnino de Desenvolvimento de Sistemas.</Text>
-            <image source={require("../assets/img/eu.jpg")} style={styles.imagem} />
+            <Text style={styles.texto0}>Tenho 17 anos e hoje estou estudando na Rede Sesi e Senai em Valinhos - SP. NA rede Sesi estou no 3° ano do Ensino Médio, no meu último ano. Na Rede Senai estou no técnino de Desenvolvimento de Sistemas.</Text>
+            <Image source={require("../assets/img/eu.jpg")} style={styles.eu} />
             
             <View style={styles.cardContainer}>
-                <Card containerStyle={styles.card1}>
-                    <Image source={require("../assets/img/iconhtml.png")} style={styles.imagem0} />
-                    <Image source={require("../assets/img/iconcss.png")} style={styles.imagem0} />
-                    <Image source={require("../assets/img/iconjs.png")} style={styles.imagem0} />
-                    <Image source={require("../assets/img/iconvsco.png")} style={styles.imagem0} />
-                </Card>
-                <Card containerStyle={styles.card2}>
-                    <Image source={require("../assets/img/icongithub.png")} style={styles.imagem1} />
-                    <Image source={require("../assets/img/iconfigma.png")} style={styles.imagem1} />
-                    <Image source={require("../assets/img/iconreact.png")} style={styles.imagem1} />
-                    <Image source={require("../assets/img/iconmiro.png")} style={styles.imagem1} />
-                </Card>
+                <View style={styles.cards}>
+                    <Image source={require("../assets/img/iconhtml.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconcss.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconjs.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconvsco.png")} style={styles.icone} />
+                </View>
+                <View style={styles.cards}>
+                    <Image source={require("../assets/img/icongithub.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconfigma.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconreact.png")} style={styles.icone} />
+                    <Image source={require("../assets/img/iconmiro.png")} style={styles.icone} />
+                </View>
             </View>
         </View>
+        </ScrollView>
     );
 }
 
@@ -35,48 +37,46 @@ const styles = StyleSheet.create({
         gap: 20,
     },
     titulo: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: "bold",
-        marginBottom: 10,
+        textAlign: "center",
     },
     texto: {
-        fontSize: 18,
+        fontSize: 15,
         textAlign: "center",
     },
     texto0: {
         fontSize: 16,
-        textAlign: "center",
+        textAlign: "justify",
     },
-    imagem: {
+    eu: {
         width: 200,
         height: 200,
         borderRadius: 100,
         marginBottom: 20,
+        alignSelf: "center",
+        marginTop: 20,
     },
     cardContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: 15,
+        marginTop: 20,
+        backgroundColor: "#F5F5F5",
+    },
+    icone: {
+        width: 50,
+        height: 50,
+        borderRadius: 10,
+    },
+    cards: {
+        flexDirection: "row",
+        justifyContent: "center",
         alignItems: "center",
-        gap: 20,
-    },
-    card1: {
-        width: 200,
-        height: 200,
-        borderRadius: 100,
-    },
-    card2: {
-        width: 200,
-        height: 200,
-        borderRadius: 100,
-    },
-    imagem0: {
-        width: 50,
-        height: 50,
-        borderRadius: 100,
-    },
-    imagem1: {
-        width: 50,
-        height: 50,
-        borderRadius: 100,
+        gap: 15,
+        padding: 10,
+        borderRadius: 15,
+        shadowRadius: 5,
     },
 });
