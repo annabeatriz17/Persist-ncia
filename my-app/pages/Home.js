@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     titulo: {
         fontSize: 24,
         fontWeight: "bold",
-        marginBottom: 10,
+        textAlign: "center",
     },
     input: {
         height: 50,
